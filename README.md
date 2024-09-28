@@ -5,6 +5,8 @@
 | ------ | ---- | ---- | ---- | ---- |
 | username | varchar2 | 50 | NOT NULL ||
 | useremail | varchar2 | 100 | NOT NULL | PK |
+
+  
 <br>
 ##### 테이블 명 : board
 | 필드명 | 타입 | 크기 | NULL | 비고 |
