@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.e.d.model.mapper.BlogUserMapper">
+	
+	<insert id="insertBlogUserInfo" parameterType="map">
+        INSERT INTO bloguser (username, useremail, userpassword)
+        VALUES (#{username}, #{useremail}, #{userpassword})
+    </insert>
+    
+    <select id="selectLoginUser" parameterType="String" resultType="com.e.d.model.vo.BlogUserVo">
+    	SELECT username, useremail, userpassword
+    	FROM bloguser
+    	WHERE username = #{username} AND useremail = #{useremail} AND userpassword = #{userpassword}
+    </select>
+    
+    <select id="all" resultType="com.e.d.model.vo.BlogUserVo">
+    	SELECT * FROM bloguser
+    </select>
+    
+    <select id="selectByUsername" resultType="com.e.d.model.vo.BlogUserVo" parameterType="String">
+    	SELECT username FROM bloguser WHERE username = #{username}
+    </select>
+	
+</mapper>
