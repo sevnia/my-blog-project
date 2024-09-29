@@ -111,15 +111,15 @@ public class MainController {
 	}
 	
 	@GetMapping("/username/{username}")
-    public String UserInfo(@PathVariable String username, Model model) {
+   	public String UserInfo(@PathVariable String username, Model model) {
 		List<BlogUserVo> userlist = userService.selectByUsername(username);
 		if (userlist != null) {
-            model.addAttribute("Userinfo", userlist);
-            return "user/userinfo";  // JSP 파일 이름
-        } else {
-            return "redirect:/";
-        }
-    }
+            		model.addAttribute("Userinfo", userlist);
+            		return "user/userinfo";  // JSP 파일 이름
+       		} else {
+            		return "redirect:/";
+        	}
+    	}
 	
 	@PostMapping("/insertBoard")
 	public String insertBoard(
