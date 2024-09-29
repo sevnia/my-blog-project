@@ -2,6 +2,7 @@ package com.e.d.model.service;
 
 import java.util.List;
 
+import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Service;
 
 import com.e.d.model.mapper.BlogBoardMapper;
@@ -22,6 +23,10 @@ public class BlogBoardService {
 	
 	public void insertBoard(String title, String writer, String blogcontent) {
 		mapper.insertBoard(title, writer, blogcontent);
+	}
+	
+	public BlogBoardVo selectBoardByTtileAndWrtier(@Param("title") String title, @Param("writer") String writer) {
+		return mapper.selectBoardByTtileAndWrtier(title, writer);
 	}
 	
 }

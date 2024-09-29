@@ -11,4 +11,8 @@
 		VALUES (#{title}, #{writer}, #{blogcontent})
 	</insert>
 	
+	<select id="selectBoardByTtileAndWrtier" parameterType="String" resultType="com.e.d.model.vo.BlogBoardVo">
+		SELECT * FROM blogboard WHERE title = #{title} AND writer = #{writer}
+	</select>
+	
 </mapper>

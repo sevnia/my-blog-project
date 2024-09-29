@@ -4,14 +4,12 @@
 <jsp:include page="/WEB-INF/common/header.jsp" />
 
 	<div class="container post-container" style="margin-top: 20px; padding: 20px;
-		background-color: white; border-radius: 10px; box-shadow: 0px 0px 10px rgb(0, 0, 0.01);">
-	    <h3 class="text-left">${title}</h3>
-	    <p class="text-muted text-left">작성자: ${writer}</p>
-	    <hr>
+		background-color: white; border-radius: 10px;">
+	    <h3 class="text-left">${blogboard.title}</h3>
+	    <p class="text-muted text-left">작성자: ${blogboard.writer}</p>
 	    <div class="content">
-	        <p>${blogcontent}</p>
+	        <p>${blogboard.blogcontent}</p>
 	    </div>
-	    <hr>
 	    <div class="text-right">
 	        <a href="${ cl }/blog" class="btn btn-primary">목록으로 돌아가기</a>
 	    </div>

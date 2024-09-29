@@ -9,16 +9,16 @@
 	            <h2 class="text-center mb-4">로그인하기</h2>
 	            <form action="/login" method="post" autocomplete="off">
 	                <div class="mb-3">
-	                    <label for="username" class="form-label">username</label>
-	                    <input type="text" class="form-control" name="username" id="username" placeholder="username" required>
+	                    <label for="username" class="form-label">아이디</label>
+	                    <input type="text" class="form-control" name="username" id="username" placeholder="아이디" required>
 	                </div>
 	                <div class="mb-3">
-	                    <label for="useremail" class="form-label">user email</label>
-	                    <input type="email" class="form-control" name="useremail" id="useremail" placeholder="useremail" required>
+	                    <label for="useremail" class="form-label">이메일</label>
+	                    <input type="email" class="form-control" name="useremail" id="useremail" placeholder="이메일" required>
 	                </div>
 	                <div class="mb-3">
-	                    <label for="userpassword" class="form-label">user password</label>
-	                    <input type="password" class="form-control" name="userpassword" id="userpassword" placeholder="userpassword" required>
+	                    <label for="userpassword" class="form-label">비밀번호</label>
+	                    <input type="password" class="form-control" name="userpassword" id="userpassword" placeholder="비밀번호" required>
 	                </div>
 	                <button type="submit" class="btn btn-primary w-100">로그인</button>
 	                <a href="${ cl }/" class="btn btn-dark w-100 mt-2">돌아가기</a>

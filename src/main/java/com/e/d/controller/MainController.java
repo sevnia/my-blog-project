@@ -1,6 +1,11 @@
 package com.e.d.controller;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
 import java.util.List;
+
+import javax.swing.text.DateFormatter;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -36,6 +41,14 @@ public class MainController {
 	@GetMapping("/")
 	public String index(Model model) {
 		List<BlogBoardVo> boardList = boardService.selectAllBoard();
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy년 MM월 dd일 hh시 mm분");
+        
+        for (BlogBoardVo board : boardList) {
+            LocalDateTime dateTime = board.getDateTime(); // LocalDateTime 타입의 필드
+            String formattedDate = dateTime.format(formatter);
+            board.setFormatDateSave(formattedDate); // 포맷팅된 날짜를 새로운 필드에 저장
+
+        }
 		model.addAttribute("mainPageAllBoard", boardList);
 		return "index";
 	}
@@ -96,12 +109,10 @@ public class MainController {
 	public String boardQueryString(
 			@RequestParam String title,
 			@RequestParam String writer,
-			@RequestParam String blogcontent,
 			Model model
 	) {
-		model.addAttribute("title", title);
-		model.addAttribute("writer", writer);
-		model.addAttribute("blogcontent", blogcontent);
+		BlogBoardVo boardlist = boardService.selectBoardByTtileAndWrtier(title, writer);
+		model.addAttribute("blogboard", boardlist);
 		return "blog/blogview";
 	}
 	
@@ -128,7 +139,13 @@ public class MainController {
 			@RequestParam String blogcontent,
 			Model model
 	) {
-		boardService.insertBoard(title, writer, blogcontent);
+		try {			
+			boardService.insertBoard(title, writer, blogcontent);
+		} catch (Exception e) {
+			e.printStackTrace();
+			DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy년 MM월 dd일 hh시 mm분 ss초");
+			System.out.println("누군가가 로그인을 하지 않고 글을 작성했습니다. \n해당시간 : " + LocalDateTime.now().format(formatter));
+		}
 		return "redirect:/";
 	}
 	

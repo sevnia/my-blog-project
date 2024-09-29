@@ -8,7 +8,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>블로그 페이지 | (나혼자서만듬)</title>
     <link rel="icon" href="/img/pexels-pixabay-276514-ico.ico">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="/css/bootstrap.4.5.2min.css">
     <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
@@ -26,7 +27,7 @@
                 </form>
             </div>
             <div class="dropdown">
-                <button class="btn btn-dark dropdown-toggle"
+                <button class="btn btn-light dropdown-toggle"
                     type="button" id="menuButton" data-toggle="dropdown"
                     aria-haspopup="true" aria-expanded="false"
                     style="padding-left: 30px; padding-right: 30px;">
@@ -37,6 +38,7 @@
 	                	<h6 class="dropdown-header">프로필</h6>
                     	<div class="dropdown-divider"></div>
                     	<a class="dropdown-item" href="${ cl }/username/${ loginuser.username }">${ loginuser.username }님</a>
+                    	<a class="dropdown-item" href="${ cl }">내가 쓴 게시글 조회</a>
 						<a class="dropdown-item" href="${ cl }/blog/write">게시글 작성하기</a>                    	
                     	<div class="dropdown-divider"></div>
                     	<a class="dropdown-item" href="${ cl }/logout">로그아웃</a>

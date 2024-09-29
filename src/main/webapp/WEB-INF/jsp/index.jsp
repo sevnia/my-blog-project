@@ -38,7 +38,7 @@
 	                        		${ board.title }
 	                        	</a>
 	                        </h5>
-	                        <h6 class="card-subtitle mb-2 text-muted">${ board.writer }</h6>
+	                        <h6 class="card-subtitle mb-2 text-muted">${ board.writer } <br> ${ board.formatDateSave }</h6>
 	                    </div>
 	                </div>
                 </c:forEach>
