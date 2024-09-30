@@ -6,7 +6,14 @@ CREATE TABLE blogboard(
         title VARCHAR2(200 CHAR),  
         writer VARCHAR2(100 CHAR),  
         blogcontent VARCHAR2(2000 CHAR) NOT NULL  
-);
+)
+| 필드명 | 타입 | 크기 | NULL | 비고 |
+|-|-|-|-|-|
+| id | NUMBER |  |  | PK |
+| title | varchar2 | 200(char) | NOT NULL |  |
+| writer | varchar2 | 100(char) | NOT NULL |  |
+| blogcontent | varchar2 | 2000(char) | NOT NULL |  |
+
 ------------------------------------------
 ##### 테이블 명 : bloguser
 | 필드명 | 타입 | 크기 | NULL | 비고 |
